@@ -1,6 +1,9 @@
 package com.dovis.fseasunny.algorithm.datastructure.linkedlist;
 
 import com.dovis.fseasunny.algorithm.common.SingleNode;
+import com.dovis.fseasunny.algorithm.util.NodeUtils;
+
+import static com.dovis.fseasunny.algorithm.util.NodeUtils.*;
 
 /**
  * classname: SingleLinkedList
@@ -38,21 +41,6 @@ public class SingleLinkedList {
     }
 
     /**
-     * 打印列表
-     */
-    public void print() {
-        if (head.next == null) {
-            return;
-        }
-        SingleNode temp = head.next;
-        while (temp != null) {
-            System.out.printf("%d\t", temp.value);
-            temp = temp.next;
-        }
-        System.out.println();
-    }
-
-    /**
      * 按照链表值升序加入链表
      */
     public void sortAdd(SingleNode singleNode) {
@@ -81,34 +69,25 @@ public class SingleLinkedList {
         }
     }
 
-    /**
-     * 统计链表有效节点个数
-     */
-    public int size(SingleNode head) {
-        if (head.next == null) return 0;
-        int size = 0;
-        SingleNode cur = head.next;
-        while (cur != null) {
-            size++;
-            cur = cur.next;
-        }
-        return size;
-    }
-
-
     public static void main(String[] args) {
         SingleLinkedList linkedList = new SingleLinkedList();
+
         linkedList.add(new SingleNode(1, 1));
         linkedList.add(new SingleNode(2, 2));
         linkedList.add(new SingleNode(3, 6));
         linkedList.sortAdd(new SingleNode(4, 2));
         linkedList.sortAdd(new SingleNode(5, 3));
         linkedList.sortAdd(new SingleNode(6, 0));
-        linkedList.print();
-        System.out.printf("size: %d\r\n", linkedList.size(linkedList.getHead()));
-        linkedList.del(2);
-        linkedList.print();
-        System.out.printf("size: %d\r\n", linkedList.size(linkedList.getHead()));
+
+        NodeUtils.print(linkedList.getHead());
+        reverseNode(linkedList.getHead());
+        NodeUtils.print(linkedList.getHead());
+        System.out.printf("When the last %d node is: %s\r\n", 3, getBottomNode(linkedList.getHead(), 3));
+        System.out.printf("size: %d\r\n", size(linkedList.getHead()));
+        linkedList.del(6);
+        NodeUtils.print(linkedList.getHead());
+        System.out.printf("When the last %d node is: %s\r\n", 1, getBottomNode(linkedList.getHead(), 1));
+        System.out.printf("size: %d\r\n", size(linkedList.getHead()));
     }
 }
 

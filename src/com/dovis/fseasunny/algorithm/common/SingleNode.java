@@ -25,4 +25,13 @@ public class SingleNode {
         this.value = value;
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return "SingleNode{" +
+                "no=" + no +
+                ", value=" + value +
+//                ", next=" + next +
+                '}';
+    }
 }
