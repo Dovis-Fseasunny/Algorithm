@@ -20,6 +20,10 @@ public class SingleNode {
         this(no, value, null);
     }
 
+    public SingleNode(int value) {
+        this(0, value, null);
+    }
+
     public SingleNode(int no, int value, SingleNode next) {
         this.no = no;
         this.value = value;

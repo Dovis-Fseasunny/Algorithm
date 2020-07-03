@@ -1,5 +1,7 @@
 package com.dovis.fseasunny.algorithm.datastructure.array;
 
+import static com.dovis.fseasunny.algorithm.util.ArrayUtils.displayArray;
+
 /**
  * classname: SparseArray
  * description:
@@ -49,22 +51,7 @@ public class SparseArray {
         return array;
     }
 
-    /**
-     * 打印二维数组
-     */
-    public static String displayArray(int[][] root) {
-        StringBuilder sb = new StringBuilder();
-        for (int[] arr : root) {
-            for (int i = 0; i < arr.length; i++) {
-                sb.append(arr[i]);
-                if (i != arr.length - 1) {
-                    sb.append("\0");
-                }
-            }
-            sb.append("\r\n");
-        }
-        return sb.toString();
-    }
+
 
     public static void main(String[] args) {
         int[][] board = new int[11][11];
