@@ -1,6 +1,7 @@
 package com.dovis.fseasunny.algorithm.sort;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,21 +15,11 @@ public class QuickSorted {
 
     public static void main(String[] args) {
 
-//        Integer[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
-        List<Integer> arr = new ArrayList<>();
-        arr.add(8);
-        arr.add(9);
-        arr.add(1);
-        arr.add(7);
-        arr.add(2);
-        arr.add(3);
-        arr.add(5);
-        arr.add(4);
-        arr.add(6);
-        arr.add(0);
-//        List<Integer> list = Int.asList(arr);
-        quickSort(arr);
-        for (Integer i : arr) {
+        Integer[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+        List<Integer> arrList = Arrays.asList(arr);
+        List<Integer> list = new ArrayList<>(arrList);
+        quickSort(list);
+        for (Integer i : list) {
             System.out.print(i + "\t");
         }
     }
@@ -59,9 +50,6 @@ public class QuickSorted {
             items.addAll(small);
             items.addAll(same);
             items.addAll(large);
-            small = null;
-            same = null;
-            large = null;
         }
     }
 }
